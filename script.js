@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (qrData.trim() !== '') {
             qr.clear();
-            var logoPath = 'secret.jpg';
+            var logoPath = 'secret.png';
             var logoImage = new Image();
             logoImage.src = logoPath;
             
