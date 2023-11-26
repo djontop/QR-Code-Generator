@@ -1,26 +1,29 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>QR Code Generator</title>
+   <link rel="stylesheet" href="styles.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Custom QR Code Generator</h1>
-    </header>
-    <main>
-        <label for="qrData">Enter data:</label>
-        <input type="text" id="qrData" placeholder="Enter text or URL">
-        <button id="generateButton">Generate QR Code</button>
-        <div id="qrCodeDisplay"></div>
-    </main>
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> Your QR Code Generator</p>
-    </footer>
-<script src="script.js"></script>
+   <header>
+       <h1>Custom QR Code Generator</h1>
+   </header>
+   <main>
+       <label for="qrData">Enter data:</label>
+       <input type="text" id="qrData" placeholder="Enter text or URL">
+       <button id="generateButton">Generate QR Code</button>
+       <button id="downloadButton" disabled>Download QR Code</button>
+       <div id="qrCodeDisplay" class="qrcode"></div>
+   </main>
+   <footer>
+       <p>&copy; 2023 Manthan Vasant - QR Code Generator</p>
+   </footer>
+   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>
