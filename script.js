@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     var qrCodeDisplay = document.getElementById('qrCodeDisplay');
     var qr = new QRCode(qrCodeDisplay, {
         text: '',
         width: 128,
         height: 128,
-        correctLevel: QRCode.CorrectLevel.M,
+        correctLevel: QRCode.CorrectLevel.M
     });
 
     function generateQRCode() {
@@ -12,8 +12,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (qrData.trim() !== '') {
             qr.clear();
-            qr.makeCode(qrData);
-            document.getElementById('downloadButton').removeAttribute('disabled');
+            var logoPath = 'secret.jpg';
+            var logoImage = new Image();
+            logoImage.src = logoPath;
+            
+            logoImage.onload = function() {
+                qr.makeCode(qrData);
+                var canvas = document.querySelector('.qrcode canvas');
+                var context = canvas.getContext('2d');
+                var logoSize = 30;
+                var logoPosX = 50;
+                var logoPosY = 50;
+
+                context.save();
+                context.beginPath();
+                context.arc(logoPosX + logoSize / 2, logoPosY + logoSize / 2, logoSize / 2, 0, 2 * Math.PI);
+                context.clip();
+                context.drawImage(logoImage, logoPosX, logoPosY, logoSize, logoSize);
+                context.restore();
+
+                document.getElementById('downloadButton').removeAttribute('disabled');
+            };
         }
     }
 
