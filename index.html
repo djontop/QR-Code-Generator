@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
     <main>
         <label for="qrData">Enter data:</label>
         <input type="text" id="qrData" placeholder="Enter text or URL">
-        <button onclick="generateQRCode()">Generate QR Code</button>
+        <button id="generateButton">Generate QR Code</button>
         <div id="qrCodeDisplay"></div>
     </main>
     <footer>
