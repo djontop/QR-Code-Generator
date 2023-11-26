@@ -3,10 +3,8 @@ function generateQRCode() {
 
     if (qrData.trim() !== '') {
         var qrCodeDisplay = document.getElementById('qrCodeDisplay');
-        qrCodeDisplay.innerHTML = ''; // Clear previous QR code
-
         var qr = new QRCode(qrCodeDisplay, {
-            text: qrData,
+            text: 'https://example.com',
             width: 128,
             height: 128
         });
